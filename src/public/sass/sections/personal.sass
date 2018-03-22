@@ -1,0 +1,60 @@
+
+.personal-image
+  display: block
+  width: 100%
+  height: 300px
+  margin: 40px 0px
+
+#personal-section h4
+  margin-bottom: 50px
+
+#personal-section p
+  font-size: 24px
+
+.personal-article
+  margin-top: 50px
+  background-color: #ffffff
+  border: 1px solid rgba(0,0,0,0.3)
+  padding: 40px 20px 0px 20px
+  position: relative
+
+
+.personal-article,
+.personal-article:before,
+.personal-article:after
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.4)
+
+
+
+.personal-article:before,
+.personal-article:after
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: #eeeeee
+
+.personal-article:before
+  left: 7px
+  top: 5px
+  z-index: -1
+
+.personal-article:after
+  left: 12px
+  top: 10px
+  z-index: -2
+
+
+.personal-article header
+  text-align: center
+  height: 70px
+
+
+@media (max-width: 600px)
+  .personal-article p
+    font-size: 12px
+
+  .personal-article h4
+    font-size: 14px
+  .personal-article h3
+    font-size: 14px
