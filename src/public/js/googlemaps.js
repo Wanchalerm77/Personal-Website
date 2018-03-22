@@ -1,7 +1,7 @@
 var loadGoogleMapsApi = require("load-google-maps-api");
 
-loadGoogleMapsApi().then(function (googleMaps) {
-let map = new googleMaps.Map(document.getElementById("map"), {
+loadGoogleMapsApi().then(function(googleMaps) {
+  let map = new googleMaps.Map(document.getElementById("map"), {
     center: {
       lat: 52.12773,
       lng: 11.62916
@@ -15,8 +15,8 @@ let map = new googleMaps.Map(document.getElementById("map"), {
       lat: 52.12773,
       lng: 11.62916
     },
-    map:map
+    map: map
   });
-}).catch(function (error) {
+}).catch(function(error) {
   console.error(error)
 });
