@@ -1,6 +1,7 @@
 var loadGoogleMapsApi = require("load-google-maps-api");
 let options = {
   key: "AIzaSyDCT7ActGMfasrqz0B7cNo-uHTJShYQMIg"
+
 }
 loadGoogleMapsApi(options).then(function(googleMaps) {
   let map = new googleMaps.Map(document.getElementById("map"), {
