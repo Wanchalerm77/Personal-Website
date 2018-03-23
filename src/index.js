@@ -7,7 +7,8 @@ const hbs = require("express-handlebars");
 let app = express();
 const port = process.env.Port || 3000;
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join("../","dist")));
+
 
 app.set("views", path.join(__dirname, "views"));
 app.engine("handlebars", hbs({
