@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack-dev-server --mode development --open ",
     "build:prod": "webpack -p ",
-    "start": "node index.js"
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "ISC",
