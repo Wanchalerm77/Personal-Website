@@ -5,7 +5,7 @@ const hbs = require("express-handlebars");
 
 
 let app = express();
-const port = process.env.Port || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname ,"dist")));
 console.log(path.join(__dirname, "dist"));
