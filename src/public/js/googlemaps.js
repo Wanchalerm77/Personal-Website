@@ -1,6 +1,8 @@
 var loadGoogleMapsApi = require("load-google-maps-api");
-
-loadGoogleMapsApi().then(function(googleMaps) {
+let options = {
+  key: "AIzaSyDCT7ActGMfasrqz0B7cNo-uHTJShYQMIg"
+}
+loadGoogleMapsApi(options).then(function(googleMaps) {
   let map = new googleMaps.Map(document.getElementById("map"), {
     center: {
       lat: 52.12773,
@@ -8,7 +10,7 @@ loadGoogleMapsApi().then(function(googleMaps) {
     },
     zoom: 12,
     gestureHandling: "cooperative",
-    key: "AIzaSyDCT7ActGMfasrqz0B7cNo-uHTJShYQMIg"
+
   });
   let marker = new googleMaps.Marker({
     position: {
