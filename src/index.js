@@ -20,7 +20,7 @@ app.engine("handlebars", hbs({
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("index");
 });
 
 
