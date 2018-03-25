@@ -1,5 +1,4 @@
 
-var particleJS = require("particles.js");
 
 
 $(".nav-toggle").hover(function()  {
@@ -7,18 +6,10 @@ $(".nav-toggle").hover(function()  {
 }, function() {
     $(this).removeClass("jello");
 });
+//curtain
 
-
-//particle
-/* -----------------------------------------------
-/* How to use? : Check the GitHub README
-/* ----------------------------------------------- */
-
-/* To load a config file (particles.json) you need to host this demo (MAMP/WAMP/local)... */
-/*
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.js loaded - callback');
+$(document).on("load",() => {
+  $("#curtain").animate({
+    height: 0
+  },1500);
 });
-*/
-
-/* Otherwise just put the config content (json): */
