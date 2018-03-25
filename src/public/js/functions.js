@@ -2,10 +2,17 @@
 var typed = new Typed("#typed", {
   strings: ["Hi, I'm Wanchalerm ^500", "A Student With A Passion For Web Design"],
   typeSpeed: 40,
-  startDelay: 1000,
+  startDelay: 1600,
   fadeOut: true
 
 });
+//curtain
+
+$(document).ready(() => {
+  $("#curtain").animate({
+    height: 0
+  },1500);
+})
 // toggle navbar animation
 
 var hidden = true;
@@ -42,7 +49,7 @@ let navbarAnimations = () => {
   });
 };
 
-navbarAnimations();
+
 
 
 //hobbies gallery
@@ -74,18 +81,26 @@ let slideShow = () => {
 };
 
 let onMouseEnter = () => {
-    $(".hobby").mouseenter(function() {
-      let images = $(this).find("img");
-      for (let i = 0, k = 1; i < images.length; i++) {
-        $(images[i]).animate({
-          "opacity": 1
-        }, 1000 * k).animate({
-          "opacity": 0
-        }, 1000);
-        k += 1.5;
-      }
-    });
+  $(".hobby").mouseenter(function() {
+    let images = $(this).find("img");
+    for (let i = 0, k = 1; i < images.length; i++) {
+      $(images[i]).animate({
+        "opacity": 1
+      }, 1000 * k).animate({
+        "opacity": 0
+      }, 1000);
+      k += 1.5;
+    }
+  });
 
 };
-onMouseEnter();
-slideShow();
+
+let init = () => {
+
+  onMouseEnter();
+  slideShow();
+  navbarAnimations();
+
+};
+
+init();
