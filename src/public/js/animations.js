@@ -11,5 +11,5 @@ $(".nav-toggle").hover(function()  {
 $(window).on("load",() => {
   $("#curtain").animate({
     height: 0
-  },100);
+  },1500);
 });

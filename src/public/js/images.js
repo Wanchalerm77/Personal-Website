@@ -25,3 +25,4 @@ import "../img/skills/sass.png";
 import "../img/back.jpeg";
 import "../img/favicon.ico";
 import "../img/fullmoon.svg";
+import "../img/reh.png";
