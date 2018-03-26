@@ -9,24 +9,23 @@ var extractPlugin = new ExtractTextPlugin({
 
 
 module.exports = {
-  entry: "./src/public/js/app.js",
+  entry: [
+    "./src/public/js/app.js"
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     //publicPath: "/public"
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["es2015"]
-            }
+        use: [{
+          loader: "babel-loader",
+          options: {
+            presets: ["es2015"]
           }
-        ]
+        }]
       },
       {
         test: /\.css$/,
@@ -35,12 +34,12 @@ module.exports = {
           use: "css-loader"
         })
       },
-       {
-         test: /\.sass$/,
-         use: extractPlugin.extract({
-           fallback: "style-loader",
-           use: ["css-loader", "sass-loader"]
-         })
+      {
+        test: /\.sass$/,
+        use: extractPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "sass-loader"]
+        })
 
       },
       {
@@ -57,33 +56,49 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|jpeg|ico|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "img/",
-              publicPath: "img/"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "img/",
+            publicPath: "img/"
           }
-        ]}]
+        }]
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'application/font-woff'
+          }
+        }]
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+      }
+    ]
   },
   // devtool: "inline-source-map",
   plugins: [
-      new webpack.ProvidePlugin({
-          $: "jquery",
-          jQuery: "jquery",
-          jquery: "jquery"
-      }),
-        extractPlugin,
-        new HtmlWebpackPlugin({
-          template: "./src/views/home.handlebars"
-        }),
-        new webpack.LoaderOptionsPlugin({
-       options: {
-         handlebarsLoader: {}
-       }
-     })
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery"
+    }),
+    extractPlugin,
+    new HtmlWebpackPlugin({
+      template: "./src/views/home.handlebars"
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        handlebarsLoader: {}
+      }
+    })
 
   ]
 };

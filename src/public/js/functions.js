@@ -6,13 +6,7 @@ var typed = new Typed("#typed", {
   fadeOut: true
 
 });
-//curtain
 
-$(document).ready(() => {
-  $("#curtain").animate({
-    height: 0
-  },1500);
-})
 // toggle navbar animation
 
 var hidden = true;

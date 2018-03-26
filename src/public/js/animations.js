@@ -8,8 +8,8 @@ $(".nav-toggle").hover(function()  {
 });
 //curtain
 
-$(document).on("load",() => {
+$(window).on("load",() => {
   $("#curtain").animate({
     height: 0
-  },1500);
+  },100);
 });
