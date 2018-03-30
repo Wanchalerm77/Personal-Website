@@ -7,42 +7,6 @@ var typed = new Typed("#typed", {
 
 });
 
-// toggle navbar animation
-
-var hidden = true;
-let showNavAnimation = {
-  "left": "100vw"
-}
-let hideNavAnimation = {
-  "left": "0"
-}
-
-let navbarAnimations = () => {
-  $(".nav-toggle").click(function(event) {
-    if (hidden) {
-      event.preventDefault();
-      $(".navbar-menu").animate(hideNavAnimation, 1000);
-      hidden = false;
-      $(".nav-toggle span:first-child").addClass("firstCross");
-      $(".nav-toggle span:last-child").addClass("thirdCross");
-      $(".nav-toggle span").removeClass("noCross");
-      $(".nav-toggle span:nth-child(2)").css("opacity", "0");
-
-    } else {
-      event.preventDefault();
-      $(".navbar-menu").animate(showNavAnimation, 1000);
-      hidden = true;
-      $(".nav-toggle span").addClass("noCross");
-      $(".nav-toggle span:first-child").removeClass("firstCross");
-      $(".nav-toggle span:last-child").removeClass("thirdCross");
-      $(".nav-toggle span:nth-child(2)").css("opacity", "1");
-
-
-
-    }
-  });
-};
-
 
 
 
@@ -50,7 +14,7 @@ let navbarAnimations = () => {
 
 var id;
 
-let slideShow = () => {
+
   $(".hobby").hover(function() {
     let img = $(this).find("img");
     id = setInterval(() => {
@@ -72,9 +36,9 @@ let slideShow = () => {
       $(img).finish();
     }
   });
-};
 
-let onMouseEnter = () => {
+
+
   $(".hobby").mouseenter(function() {
     let images = $(this).find("img");
     for (let i = 0, k = 1; i < images.length; i++) {
@@ -87,14 +51,6 @@ let onMouseEnter = () => {
     }
   });
 
-};
 
-let init = () => {
 
-  onMouseEnter();
-  slideShow();
-  navbarAnimations();
 
-};
-
-init();
